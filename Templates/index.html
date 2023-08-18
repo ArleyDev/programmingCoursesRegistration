@@ -24,6 +24,10 @@
                 <select class="form-select" name="Curso">
                     <option value="" selected disabled>Courses</option>
                     <!-- Aquí podrías mantener la lógica de tus opciones -->
+                    {% for curso in cursos%}
+                    <option value="{{curso}}">{{curso}}</option>
+                    {% endfor%}
+
                 </select>
             </div>
             <button class="btn btn-primary" type="submit">Register</button>
