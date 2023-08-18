@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration Success</title>
+    <!-- Agregar enlaces a los archivos de Bootstrap CSS y JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
-    <p> {{name}}, {{lastName}} te has registrado exitosamente en el curso de {{curso}} &#x2713;</p>
+    <div class="container mt-5">
+        <div class="card p-4 text-center">
+            <p class="fs-4">{{name}}, {{lastName}}, you have successfully registered for the {{curso}} course <span class="text-success">&#x2713;</span></p>
+        </div>
+    </div>
+
+    <!-- Agregar enlaces a los archivos de Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

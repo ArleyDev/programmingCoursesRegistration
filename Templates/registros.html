@@ -3,33 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Cursos</title>
+    <!-- Agregar enlaces a los archivos de Bootstrap CSS y JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Registros</h1>
-    <form action="/registros" type="submit" name="registros" method="post">
-        <input placeholder="Nombre" name="NombreEnRegistro">
-        
-        <button type="submit">Buscar </button>
-    </form>
+<body class="bg-light">
 
-    <ul>
-        {% for registro in registros %}
-            <li>{{ registro }}</li>
-        {% endfor %}
-    </ul>
+    <div class="container mt-5">
+        <h1 class="text-center">Registros</h1>
+        <form action="/registros" method="post" class="mb-3">
+            <div class="input-group">
+                <input class="form-control" placeholder="Nombre" name="NombreEnRegistro" type="text">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+        </form>
 
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Curso</th>
-        </tr>
-        {% for cregistro in todosRegistros %}
-            <tr>
-                <td>{{ cregistro[0] }}</td>
-                <td>{{ cregistro[1] }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Cursosss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for registro in registros %}
+                        <tr>
+                            <td>{{ registro[0] }}</td>
+                            <td>{{ registro[1] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+<!-- 
+        <ul class="list-group">
+
+
+            {% for registro in registros %}
+                <li class="list-group-item">{{ registro }}</li>
+            {% endfor %}
+        </ul> -->
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <!-- <tr>
+                        <th>Nombre</th>
+                        <th>Cursosss</th>
+                    </tr> -->
+                </thead>
+                <tbody>
+                    {% for cregistro in todosRegistros %}
+                        <tr>
+                            <td>{{ cregistro[0] }}</td>
+                            <td>{{ cregistro[1] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Agregar enlaces a los archivos de Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
