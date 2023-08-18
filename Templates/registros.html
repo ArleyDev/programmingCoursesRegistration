@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registros</h1>
+    <form action="/registros" type="submit" name="registros" method="post">
+        <input placeholder="Nombre" name="NombreEnRegistro">
+        
+        <button type="submit">Buscar </button>
+    </form>
+
+    <ul>
+        {% for registro in registros %}
+            <li>{{ registro }}</li>
+        {% endfor %}
+    </ul>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Curso</th>
+        </tr>
+        {% for cregistro in todosRegistros %}
+            <tr>
+                <td>{{ cregistro[0] }}</td>
+                <td>{{ cregistro[1] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
